@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.3.50</Version>
+    <SymbolConfigObject version="3.5.3.50" />
+    <ProjectInfo name="Trike_PLC_Project" devicename="HMISAC" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_USINT" size="1" swapsize="1" typeclass="USInt" iecname="USINT" />
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
+    <TypeSimple name="T_CANOPEN_KERNEL_ERROR" size="2" swapsize="2" typeclass="Enum" iecname="CANOPEN_KERNEL_ERROR" />
+    <TypeSimple name="T_PROC_STATE" size="2" swapsize="2" typeclass="Enum" iecname="PROC_STATE" />
+    <TypeSimple name="T_PROC_CMD" size="2" swapsize="2" typeclass="Enum" iecname="PROC_CMD" />
+    <TypeSimple name="T_ERROR" size="2" swapsize="2" typeclass="Enum" iecname="ERROR" />
+    <TypeSimple name="T_USINT__0__127_" size="1" swapsize="1" typeclass="Subrange" iecname="USINT (0..127)" />
+    <TypeSimple name="T_DEVICE_STATE" size="2" swapsize="2" typeclass="Enum" iecname="DEVICE_STATE" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeSimple name="T_DWORD" size="4" swapsize="4" typeclass="DWord" iecname="DWORD" />
+    <TypeUserDef name="T_CS_SDO_READ" size="60" nativesize="60" typeclass="Userdef" iecname="CS.SDO_READ">
+      <UserDefElement type="T_USINT" iecname="usiNodeId" byteoffset="0" />
+      <UserDefElement type="T_USINT" iecname="usiChannel" byteoffset="1" />
+      <UserDefElement type="T_UINT" iecname="uiIndex" byteoffset="2" />
+      <UserDefElement type="T_USINT" iecname="usiSubIndex" byteoffset="4" />
+      <UserDefElement type="T_BOOL" iecname="xUseSpecificTimeout" byteoffset="5" />
+      <UserDefElement type="T_BOOL" iecname="xBlockTransfer" byteoffset="6" />
+      <UserDefElement type="T_BOOL" iecname="usiPST" byteoffset="7" />
+      <UserDefElement type="T_UINT" iecname="uiState" byteoffset="8" />
+      <UserDefElement type="T_UINT" iecname="uiSize" byteoffset="10" />
+      <UserDefElement type="T_DWORD" iecname="pData" byteoffset="12" />
+      <UserDefElement type="T_UDINT" iecname="udiAbortCode" byteoffset="16" />
+      <UserDefElement type="T_UDINT" iecname="ctTimeout" byteoffset="56" />
+    </TypeUserDef>
+    <TypeUserDef name="T_CIA405_GET_STATE" size="108" nativesize="108" typeclass="Userdef" iecname="CIA405.GET_STATE">
+      <UserDefElement type="T_USINT" iecname="NETWORK" byteoffset="4" />
+      <UserDefElement type="T_BOOL" iecname="ENABLE" byteoffset="5" />
+      <UserDefElement type="T_UDINT" iecname="TIMEOUT" byteoffset="8" />
+      <UserDefElement type="T_BOOL" iecname="CONFIRM" byteoffset="12" />
+      <UserDefElement type="T_CANOPEN_KERNEL_ERROR" iecname="ERROR" byteoffset="14" />
+      <UserDefElement type="T_BOOL" iecname="xPreviousEnable" byteoffset="16" />
+      <UserDefElement type="T_BOOL" iecname="xAbortInProgress" byteoffset="17" />
+      <UserDefElement type="T_BOOL" iecname="xBusy" byteoffset="18" />
+      <UserDefElement type="T_UDINT" iecname="tkStart" byteoffset="20" />
+      <UserDefElement type="T_UDINT" iecname="tkTimeOut" byteoffset="24" />
+      <UserDefElement type="T_UDINT" iecname="tkActTime" byteoffset="28" />
+      <UserDefElement type="T_PROC_STATE" iecname="eProcState" byteoffset="32" />
+      <UserDefElement type="T_PROC_CMD" iecname="eProcCmd" byteoffset="34" />
+      <UserDefElement type="T_ERROR" iecname="eError" byteoffset="36" />
+      <UserDefElement type="T_USINT__0__127_" iecname="DEVICE" byteoffset="40" />
+      <UserDefElement type="T_DEVICE_STATE" iecname="STATE" byteoffset="42" />
+      <UserDefElement type="T_CS_SDO_READ" iecname="SDO" byteoffset="44" />
+      <UserDefElement type="T_USINT" iecname="usiData" byteoffset="104" />
+    </TypeUserDef>
+    <TypeSimple name="T_DINT" size="4" swapsize="4" typeclass="DInt" iecname="DINT" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="GVL">
+        <Node name="eDev06ComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="iAnalogOut" type="T_INT" access="ReadWrite" />
+        <Node name="iTemp1" type="T_INT" access="ReadWrite" />
+        <Node name="iTemp2" type="T_INT" access="ReadWrite" />
+        <Node name="iTemp3" type="T_INT" access="ReadWrite" />
+        <Node name="iTemp4" type="T_INT" access="ReadWrite" />
+        <Node name="iTemp5" type="T_INT" access="ReadWrite" />
+        <Node name="iTemp6" type="T_INT" access="ReadWrite" />
+        <Node name="xBluSafeErrLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xButnFwd" type="T_BOOL" access="ReadWrite" />
+        <Node name="xButnFwdLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xButnRev" type="T_BOOL" access="ReadWrite" />
+        <Node name="xButnRevLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xButnStop" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCANopenSta" type="T_BOOL" access="ReadWrite" />
+        <Node name="xDev06ComOk" type="T_BOOL" access="ReadWrite" />
+        <Node name="xDoorButnMainLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xDoorMain" type="T_BOOL" access="ReadWrite" />
+        <Node name="xEStop" type="T_BOOL" access="ReadWrite" />
+        <Node name="xEStopButnMainLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xGrenOperLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xLXMErrSta" type="T_BOOL" access="ReadWrite" />
+        <Node name="xPulse_1s" type="T_BOOL" access="ReadWrite" />
+        <Node name="xRedErrLEDon" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWhitPwrLEDon" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_ALARMMSG">
+        <Node name="xAlrmWriteParaLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xAlrmWriteParaLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xAxisAlarmLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xAxisAlarmLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xAxisAlarmLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xComAlarmLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xComAlarmLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xComAlarmLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xDoorGuardAlarm" type="T_BOOL" access="ReadWrite" />
+        <Node name="xEStopAlarm" type="T_BOOL" access="ReadWrite" />
+        <Node name="xMcbAlarmLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xMcbAlarmLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xMcbAlarmLXM32i11" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_DUNKER_0A">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_DUNKER_0B">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_DUNKER_0C">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_DUNKER_0D">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_HMIVAR">
+        <Node name="diSetMovVeloLXM28A03" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetMovVeloLXM28A04" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetMovVeloLXM32i11" type="T_DINT" access="ReadWrite" />
+        <Node name="xCmdEnPwrLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdEnPwrLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdEnPwrLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdHomingLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdHomingLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdHomingLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFastLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFastLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFastLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFwdLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFwdLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFwdLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogRevLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogRevLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogRevLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovAbsLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovAbsLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovAbsLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovRelLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovRelLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovRelLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovVeloLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovVeloLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovVeloLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdRstLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdRstLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdRstLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdStopLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdStopLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdStopLXM32i11" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdWriteParaLXM28A03" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdWriteParaLXM28A04" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWriteParaAccDoneLXM2803" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWriteParaAccDoneLXM2804" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWriteParaDecDoneLXM2803" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWriteParaDecDoneLXM2804" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWriteParaDecStopDoneLXM2803" type="T_BOOL" access="ReadWrite" />
+        <Node name="xWriteParaDecStopDoneLXM2804" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_JOYSTICK6000">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_LXM28A_NODE03">
+        <Node name="diActlPos" type="T_DINT" access="ReadWrite" />
+        <Node name="diActlVelo" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetDistMovRel" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetHomePos" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetJogDist" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetPosMovAbs" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloHome" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloJogFast" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloJogSlow" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovAbs" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovRel" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovVelo" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloOutHome" type="T_DINT" access="ReadWrite" />
+        <Node name="dwErrID" type="T_DWORD" access="ReadWrite" />
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="iWaitTimeJog" type="T_INT" access="ReadWrite" />
+        <Node name="uiSetHomeMod" type="T_UINT" access="ReadWrite" />
+        <Node name="xAbsActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdEnPwr" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdHoming" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFast" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFwd" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogRev" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovAbs" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovRel" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovVelo" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdRst" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdStop" type="T_BOOL" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+        <Node name="xErr" type="T_BOOL" access="ReadWrite" />
+        <Node name="xHomeActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xJogActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xMcbRdy" type="T_BOOL" access="ReadWrite" />
+        <Node name="xRelActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xStatEnbl" type="T_BOOL" access="ReadWrite" />
+        <Node name="xVeloActv" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_LXM28A_NODE04">
+        <Node name="diActlPos" type="T_DINT" access="ReadWrite" />
+        <Node name="diActlVelo" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetDistMovRel" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetHomePos" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetJogDist" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetPosMovAbs" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloHome" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloJogFast" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloJogSlow" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovAbs" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovRel" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovVelo" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloOutHome" type="T_DINT" access="ReadWrite" />
+        <Node name="dwErrID" type="T_DWORD" access="ReadWrite" />
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="iWaitTimeJog" type="T_INT" access="ReadWrite" />
+        <Node name="uiSetHomeMod" type="T_UINT" access="ReadWrite" />
+        <Node name="xAbsActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdEnPwr" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdHoming" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFast" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFwd" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogRev" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovAbs" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovRel" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovVelo" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdRst" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdStop" type="T_BOOL" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+        <Node name="xErr" type="T_BOOL" access="ReadWrite" />
+        <Node name="xHomeActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xJogActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xMcbRdy" type="T_BOOL" access="ReadWrite" />
+        <Node name="xRelActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xStatEnbl" type="T_BOOL" access="ReadWrite" />
+        <Node name="xVeloActv" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_LXM32I_NODE11">
+        <Node name="diActlPos" type="T_DINT" access="ReadWrite" />
+        <Node name="diActlVelo" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetDecStop" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetDistMovRel" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetHomePos" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetJogDist" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetPosDisHome" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetPosMovAbs" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetPosOutHome" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloHome" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloJogFast" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloJogSlow" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovAbs" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovRel" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloMovVelo" type="T_DINT" access="ReadWrite" />
+        <Node name="diSetVeloOutHome" type="T_DINT" access="ReadWrite" />
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="iWaitTimeJog" type="T_INT" access="ReadWrite" />
+        <Node name="uiSetHomeMod" type="T_UINT" access="ReadWrite" />
+        <Node name="wErrID" type="T_WORD" access="ReadWrite" />
+        <Node name="xAbsActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdEnPwr" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdHoming" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFast" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogFwd" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdJogRev" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovAbs" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovRel" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdMovVelo" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdRst" type="T_BOOL" access="ReadWrite" />
+        <Node name="xCmdStop" type="T_BOOL" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+        <Node name="xErr" type="T_BOOL" access="ReadWrite" />
+        <Node name="xHomeActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xJogActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xMcbRdy" type="T_BOOL" access="ReadWrite" />
+        <Node name="xRelActv" type="T_BOOL" access="ReadWrite" />
+        <Node name="xStatEnbl" type="T_BOOL" access="ReadWrite" />
+        <Node name="xVeloActv" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_MICROCAN">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_RETAIN">
+        <Node name="udiParaAccLXM2803" type="T_UDINT" access="ReadWrite" />
+        <Node name="udiParaAccLXM2804" type="T_UDINT" access="ReadWrite" />
+        <Node name="udiParaDecLXM2803" type="T_UDINT" access="ReadWrite" />
+        <Node name="udiParaDecLXM2804" type="T_UDINT" access="ReadWrite" />
+        <Node name="udiParaDecStopLXM2803" type="T_UDINT" access="ReadWrite" />
+        <Node name="udiParaDecStopLXM2804" type="T_UDINT" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_SPEEDGOAT">
+        <Node name="eComStat" type="T_DEVICE_STATE" access="ReadWrite" />
+        <Node name="xComOk" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_DUNKER_0A">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_DUNKER_0B">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_DUNKER_0C">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_DUNKER_0D">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_JOYSTICK6000">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_MICROCAN">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_SPEEDGOAT">
+        <Node name="fbGetNodeStat" type="T_CIA405_GET_STATE" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
